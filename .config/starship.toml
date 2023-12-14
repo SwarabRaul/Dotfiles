@@ -1,0 +1,163 @@
+# ~/.config/starship.toml
+
+# Wait 10 milliseconds for starship to check files under the current directory.
+scan_timeout = 10
+
+command_timeout = 1000
+
+# Disable the blank line at the start of the prompt
+add_newline = true
+
+format = """
+[](#a3aed2)\
+$os$username$hostname\
+[](bg:#769ff0 fg:#a3aed2)\
+$directory\
+[](fg:#769ff0 bg:#394260)\
+$git_branch\
+$git_status\
+[](fg:#394260 bg:#212736)\
+$python\
+$conda\
+$c\
+$rust\
+$java\
+$lua\
+$bun\
+$deno\
+$nodejs\
+$docker_context\
+[](fg:#212736 bg:#1d2230)\
+$time\
+[ ](fg:#1d2230)\
+\n$character"""
+
+continuation_prompt = '▶▶ '
+
+[character]
+success_symbol = '[❯](bold green) '
+error_symbol = '[❯](bold red) '
+
+[os]
+style = "bg:#394260"
+format = '[[ $symbol](bg:#a3aed2 fg:#090c0c)]($style)'
+disabled = false
+
+[os.symbols]
+Ubuntu = "  "
+Fedora = "  "
+Arch = "  "
+Manjaro = " 󱘊 "
+Debian = " "
+Windows = "  "
+
+[username]
+style_user = 'white bold'
+style_root = 'black bold'
+format = '[[$user](bg:#a3aed2 fg:#090c0c)]($style)'
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = '[[@$hostname](bg:#a3aed2 fg:#090c0c)]($style)'
+disabled = false
+
+[directory]
+truncation_length = 2
+truncation_symbol = '…/'
+read_only = '  '
+read_only_style = '197'
+style = "fg:#e3e5e5 bg:#769ff0"
+format = "[ $path ]($style)[$read_only]($read_only_style)"
+
+[directory.substitutions]
+"Documents" = "Documents 󰈙 "
+"Downloads" = "Downloads  "
+"Music" = "Music  "
+"Pictures" = "Pictures  "
+"Code" = "Code 󰅨 "
+
+[git_branch]
+symbol = ""
+style = "bg:#394260"
+format = '[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)'
+
+[git_status]
+style = "bg:#394260"
+format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)'
+up_to_date = " "
+untracked = " "
+modified = " "
+staged = '[++\($count\) ](bg:#394260 green)'
+deleted = " "
+conflicted = "🏳"
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
+windows_starship = '/mnt/c/Program Files/starship/bin/starship.exe'
+
+[python]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[conda]
+symbol = "🅒"
+style = "bg:#212736"
+format = '[[ via $symbol ($environment) ](fg:#769ff0 bg:#212736)]($style)'
+
+[c]
+symbol = "󰙱"
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[java]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[lua]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[bun]
+symbol = "🍞"
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[deno]
+symbol = "🦕"
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($context) ](fg:#769ff0 bg:#212736)]($style)'
+
+# [[battery.display]] # 'bold red' style and discharging_symbol when capacity is between 0% and 10%
+# threshold = 50
+# style = 'bold red'
+
+# [[battery.display]] # 'bold yellow' style and 💦 symbol when capacity is between 10% and 30%
+# threshold = 70
+# style = 'bold yellow'
+# discharging_symbol = '💦'
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:#1d2230"
+format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
