@@ -7,6 +7,7 @@ alias ll "eza --color=always --group-directories-first --icons --git -l" # my pr
 alias la "eza --color=always --group-directories-first --icons --git -al" # all files and dirs
 alias lt "eza -lT --color=always --group-directories-first --icons --git" # tree listing
 alias config "/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME" # Bare Dotfile Manager
+alias addgitignore "npx add-gitignore" # Added 'npx add-gitignore'
 
 # Git Alias 
 alias g "git"
