@@ -22,7 +22,8 @@ alias ll='eza --icons --group-directories-first --git -l' # my preferred listing
 alias la='eza --icons --group-directories-first --git -l -a' # all files and dirs
 alias tree='eza -T --icons --group-directories-first --git -l' # tree listing
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME' # Bare Dotfile Manager
-
+alias addgitignore='npx add-gitignore' # Added 'npx add-gitignore'
+ 
 # Git Alias
 alias g='git'
 alias gg='lazygit'
