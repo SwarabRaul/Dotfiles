@@ -1,6 +1,9 @@
 ### Fish Greeting Message ###
 set fish_greeting ""
 
+# Theme
+# fish_config theme save "Catppuccin Mocha"
+
 ### ALIAS ###
 alias c "code ."
 alias ll "eza --color=always --group-directories-first --icons --git -l" # my preferred listing
@@ -50,3 +53,6 @@ end
 
 ### asdf Initialization ###
 source ~/.asdf/asdf.fish
+
+# Enabling Transience Prompt - Left & Right
+enable_transience
