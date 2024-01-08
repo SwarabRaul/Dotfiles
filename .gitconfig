@@ -3,3 +3,5 @@
 	email = swarab.raul@gmail.com
 [init]
 	defaultBranch = master
+[core]
+	editor = code
