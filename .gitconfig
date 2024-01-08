@@ -4,4 +4,4 @@
 [init]
 	defaultBranch = master
 [core]
-	editor = vim
+	editor = nvim
