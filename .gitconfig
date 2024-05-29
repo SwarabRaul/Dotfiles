@@ -1,0 +1,19 @@
+[user]
+	name = Swarab Raul
+	email = swarab.raul@gmail.com
+
+[init]
+	defaultBranch = main
+
+[core]
+	editor = code --wait
+
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = "code --wait "
+	
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = "code --wait --diff  "

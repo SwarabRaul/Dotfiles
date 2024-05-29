@@ -1,0 +1,181 @@
+format = """
+[](nord1)\
+$username\
+[](bg:nord2 fg:nord1)\
+$directory\
+[](fg:nord2 bg:nord3)\
+$git_branch\
+$git_status\
+[](fg:nord3 bg:nord8)\
+$c\
+$elixir\
+$elm\
+$golang\
+$haskell\
+$java\
+$julia\
+$lua\
+$nodejs\
+$nim\
+$python\
+$rust\
+[](fg:nord8 bg:nord9)\
+$docker_context\
+$conda\
+$package\
+[](fg:nord9 bg:nord10)\
+$cmd_duration\
+[ ](fg:nord10)\
+$status\
+"""
+scan_timeout = 10
+command_timeout = 5000
+add_newline = false
+
+# A continuation prompt that displays two filled-in arrows
+continuation_prompt = ''
+
+palette = 'nord'
+[palettes.nord]
+nord0 = '#2E3440'
+nord1 = '#3B4252'
+nord2 = '#434C5E'
+nord3 = '#4C566A'
+nord4 = '#D8DEE9'
+nord5 = '#E5E9F0'
+nord6 = '#ECEFF4'
+nord7 = '#8FBCBB'
+nord8 = '#88C0D0'
+nord9 = '#81A1C1'
+nord10 = '#5E81AC'
+nord11 = '#BF616A'
+nord12 = '#D08770'
+nord13 = '#EBCB8B'
+nord14 = '#A3BE8C'
+nord15 = '#B48EAD'
+
+# You can also replace your username with a neat symbol like  to save some space
+[username]
+show_always = true
+style_user = "bg:nord1"
+style_root = "bg:nord1"
+format = '[$user ]($style)'
+
+[directory]
+style = "bg:nord2"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+# Here is how you can shorten some long paths by text replacement
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+"Videos" = " "
+"Onedrive" = ""
+# Keep in mind that the order matters. For example:
+# "Important Documents" = "  "
+# will not be replaced, because "Documents" was already substituted before.
+# So either put "Important Documents" before "Documents" or use the substituted version:
+# "Important  " = "  "
+
+[git_branch]
+symbol = " "
+style = "bg:nord3 fg:nord6"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+windows_starship = "/mnt/c/Program Files/starship/bin/starship.exe"
+style = "bg:nord3 fg:nord6"
+format = '[$all_status$ahead_behind ]($style)'
+
+[c]
+symbol = " "
+style = "bg:nord8 fg:nord6"
+format = '[ $symbol ($version) ]($style)'
+
+[elixir]
+symbol = " "
+style = "bg:nord8 fg:nord6"
+format = '[ $symbol ($version) ]($style)'
+
+[elm]
+symbol = " "
+style = "bg:nord8 fg:nord6"
+format = '[ $symbol ($version) ]($style)'
+
+[golang]
+symbol = " "
+style = "bg:nord8 fg:nord6"
+format = '[ $symbol ($version) ]($style)'
+
+[haskell]
+symbol = " "
+style = "bg:nord8 fg:nord6"
+format = '[ $symbol ($version) ]($style)'
+
+[java]
+symbol = " "
+style = "bg:nord8 fg:nord6"
+format = '[ $symbol ($version) ]($style)'
+
+[julia]
+symbol = " "
+style = "bg:nord8 fg:nord6"
+format = '[ $symbol ($version) ]($style)'
+
+[lua]
+symbol = " "
+style = "bg:nord8 fg:nord6"
+format = "[ $symbol ($version) ]($style)"
+
+[nodejs]
+symbol = ""
+style = "bg:nord8 fg:nord6"
+format = '[ $symbol ($version) ]($style)'
+
+[nim]
+symbol = " "
+style = "bg:nord8 fg:nord6"
+format = '[ $symbol ($version) ]($style)'
+
+[python]
+symbol = " "
+style = "bg:nord1 fg:nord6"
+format = '[ $symbol ($version) (\($virtualenv\) )]($style)'
+
+[rust]
+symbol = ""
+style = "bg:nord8 fg:nord6"
+format = '[ $symbol ($version) ]($style)'
+
+[docker_context]
+symbol = " "
+style = "bg:nord9 fg:nord6"
+format = '[ $symbol $context ]($style) $path'
+
+[conda]
+symbol = "󰏓 "
+ignore_base = true
+style = "bg:nord9 fg:nord6"
+format = '[ $symbol $environment ]($style)'
+
+[package]
+symbol = " "
+format = '[ $symbol $version ]($style)'
+
+[cmd_duration]
+min_time = 5000
+disabled = false
+show_notifications = true
+min_time_to_notify = 45_000
+style = "bg:nord10 fg:nord6"
+format = '[ $duration ]($style)'
+
+[status]
+symbol = "[](bg:nord1 fg:nord11)"
+success_symbol = "[](bg:nord1 fg:nord6)"
+format = "[](nord1)[$symbol]($style)[ ](nord1)"
+disabled = false
