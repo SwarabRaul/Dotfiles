@@ -26,7 +26,9 @@ $package\
 [](fg:nord9 bg:nord10)\
 $cmd_duration\
 [ ](fg:nord10)\
+[](nord1)\
 $status\
+[ ](nord1)\
 """
 scan_timeout = 10
 command_timeout = 5000
@@ -177,5 +179,9 @@ format = '[ $duration ]($style)'
 [status]
 symbol = "[](bg:nord1 fg:nord11)"
 success_symbol = "[](bg:nord1 fg:nord6)"
-format = "[](nord1)[$symbol]($style)[ ](nord1)"
+format = "[$symbol]($style)"
 disabled = false
+
+[character]
+success_symbol = '[](nord1)[󰅂](bg:nord1 fg:nord14)[ ](nord1)'
+error_symbol = '[](nord1)[](bg:nord1 fg:nord11)[ ](nord1)'
