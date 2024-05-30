@@ -90,7 +90,7 @@ Invoke-Expression (&starship init powershell)
 
 # Transient Prompt Function
 function Invoke-Starship-TransientFunction {
-    &starship module status
+    &starship module character
 }
 Enable-TransientPrompt
 
